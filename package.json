@@ -52,7 +52,7 @@
     "watchify": "~3.7.0"
   },
   "dependencies": {
-    "literallycanvas-core": "git+ssh://git@github.com/silleknarf/literallycanvas-core.git#fc2eaea6df8e1dd86ab209bfd61707b74db2f4f1",
+    "literallycanvas-core": "github:silleknarf/literallycanvas",
     "react-addons-pure-render-mixin": "^15.1"
   },
   "peerDependencies": {
