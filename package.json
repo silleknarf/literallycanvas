@@ -41,6 +41,7 @@
     "gulp-sass": "^2.1.1",
     "gulp-streamify": "1.0.2",
     "gulp-uglify": "~1.5.1",
+    "literallycanvas-core": "git+ssh://git@github.com/silleknarf/literallycanvas-core.git#fc2eaea6df8e1dd86ab209bfd61707b74db2f4f1",
     "merge-stream": "^1.0.0",
     "preprocessify": "0.0.6",
     "react": "^16.0.0",
@@ -52,7 +53,6 @@
     "watchify": "~3.7.0"
   },
   "dependencies": {
-    "literallycanvas-core": "github:silleknarf/literallycanvas",
     "react-addons-pure-render-mixin": "^15.1"
   },
   "peerDependencies": {
