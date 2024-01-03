@@ -33,6 +33,8 @@ Pull requests will be merged promptly if they are basically OK.
 Developing
 ----------
 
+Use old node version: `nvm use 6`
+
 Setup: `npm install --dev`
 
 Watching and serving: `gulp dev`
