@@ -1,6 +1,5 @@
 const React = require('../reactGUI/React-shim');
 const createReactClass = require('../reactGUI/createReactClass-shim');
-const { findDOMNode } = require('../reactGUI/ReactDOM-shim');
 const { classSet } = require('../core/util');
 const Picker = require('./Picker');
 const Options = require('./Options');
@@ -34,7 +33,7 @@ const LiterallyCanvas = createReactClass({
   getDefaultProps() { return defaultOptions; },
 
   bindToModel() {
-    const canvasContainerEl = findDOMNode(this.canvas);
+    const canvasContainerEl = this.canvasRef.current;
     const opts = this.props;
     this.lc.bindToElement(canvasContainerEl);
 
@@ -51,6 +50,8 @@ const LiterallyCanvas = createReactClass({
     } else {
       this.lc = new LiterallyCanvasModel(this.props);
     }
+
+    this.canvasRef = React.createRef();
 
     this.toolButtonComponents = this.lc.opts.tools.map(ToolClass => {
       return createToolButton(new ToolClass(this.lc));
@@ -86,7 +87,7 @@ const LiterallyCanvas = createReactClass({
 
     return (
       <div className={`literally ${topOrBottomClassName}`} style={style}>
-        <CanvasContainer ref={item => this.canvas = item} />
+        <CanvasContainer ref={this.canvasRef} />
         <Picker {...pickerProps} />
         <Options lc={lc} imageURLPrefix={imageURLPrefix} />
       </div>
