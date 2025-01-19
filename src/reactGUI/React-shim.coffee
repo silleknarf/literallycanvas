@@ -5,3 +5,7 @@ catch
 unless React?
   throw "Can't find React"
 module.exports = React
+
+module.exports.createFactory = (component) ->
+  (props = {}, children...) ->
+    React.createElement(component, props, children...)
